@@ -1,9 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,15 +34,17 @@ public class LoginPage {
 	{
 		signInButton.click();
 	}
-	public void whetherUserisLoggedInSuccessfully()
+	public boolean whetherDashboardTileIsDisplayed ()
 	{
 	 boolean dashBoardTileDisplay =dashBoardTile.isDisplayed();
-	 assertTrue(dashBoardTileDisplay, "User is not able to login successfully");
+	 return dashBoardTileDisplay;
+	
 	}
-	public void whethetUserIsNotAbleToLoginSuccessfully()
+	public boolean whetherAlertIsDisplayed()
 	{
 		boolean isAlertDisplayed = alert.isDisplayed();
-		assertTrue(isAlertDisplayed, "User is able to login successfully");
+		return isAlertDisplayed;
+		
 	}
 	
 	
